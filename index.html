@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#14151a">
+  <title>¡BAJAN! · Pantalla de eventos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>¡BAJAN!</h1>
+      <div id="roundTag" class="tag">RONDA 1</div>
+    </header>
+
+    <!-- 1. Inicio de ronda -->
+    <section id="view-start" class="view">
+      <p class="hint">Al iniciar la ronda, la ciudad elige un estado en secreto. Nadie lo ve hasta el final.</p>
+      <button id="btnStart" class="btn big yellow">▶ INICIAR RONDA</button>
+    </section>
+
+    <!-- 2. Ronda en juego -->
+    <section id="view-play" class="view hidden">
+      <div id="holiday" class="banner hidden">🎉 DÍA FERIADO ACTIVO: 1 solo dado en Suben y Bajan</div>
+      <button id="btnDobles" class="btn huge red">¡DOBLES!</button>
+      <div id="result" class="card result" aria-live="polite">
+        <div id="resEmoji" class="emoji">🎲</div>
+        <div id="resName" class="rname">Esperando dobles…</div>
+        <div id="resFx" class="rfx">Presiona el botón cuando alguien saque dobles al moverse.</div>
+      </div>
+      <h2>Registro (<span id="count">0</span>)</h2>
+      <ol id="log" class="log"></ol>
+      <button id="btnEnd" class="btn purple">■ TERMINAR RONDA</button>
+    </section>
+
+    <!-- 3. Revelación -->
+    <section id="view-end" class="view hidden">
+      <div class="card reveal">
+        <div class="small">LA CIUDAD ESTABA EN…</div>
+        <div id="revEmoji" class="emoji">☀️</div>
+        <div id="revName" class="rname">Normal</div>
+      </div>
+      <h2>Salieron vs. esperados</h2>
+      <div id="histo" class="histo"></div>
+      <p id="histoNote" class="hint"></p>
+      <button id="btnNext" class="btn big yellow">SIGUIENTE RONDA ▶</button>
+    </section>
+
+    <footer>
+      <button id="btnReset" class="link">Reiniciar partida</button>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
